@@ -4,8 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import "./Header.scss";
 import logo from "../../assets/logo.svg";
 import logo2 from "../../assets/logo2.svg";
-import volumeup from "../../assets/icons/Volume-up.svg";
-import volumeoff from "../../assets/icons/Volume-off.svg";
+
 import { useGeneralStore } from "../../store/generalStore";
 
 const Header = () => {
@@ -50,7 +49,24 @@ const Header = () => {
         <nav></nav>
       </header>
       <motion.div className="music" onClick={() => setIsAmbientPlaying(!isAmbientPlaying)}>
-        {isAmbientPlaying ? <img src={volumeup} alt="" /> : <img src={volumeoff} alt="" />}
+        <motion.div className={isAmbientPlaying ? "waves active" : "waves"}>
+          <motion.span></motion.span>
+          <motion.span></motion.span>
+          <motion.span></motion.span>
+        </motion.div>
+        {/* {isAmbientPlaying ? (
+          <motion.div className="waves active">
+            <motion.span></motion.span>
+            <motion.span></motion.span>
+            <motion.span></motion.span>
+          </motion.div>
+        ) : (
+          <div className="waves ">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        )} */}
       </motion.div>
     </AnimatePresence>
   );
