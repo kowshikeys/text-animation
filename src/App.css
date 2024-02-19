@@ -1,0 +1,45 @@
+/* styles.css */
+.container {
+  /* position: relative; */
+  height: 1900px;
+  /* overflow: hidden; */
+}
+
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("./background-img.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100vh;
+  width: 100%;
+}
+
+.text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px; /* Adjust font size as needed */
+  font-weight: bold; /* Adjust font weight as needed */
+  color: #333; /* Adjust text color as needed */
+  transition: opacity 0.5s ease;
+}
+
+.background-content {
+  position: relative;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.about-us {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+}
