@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css"; // Import your CSS file
 import Header from "./components/Header";
+import Splashscreen from "./components/Splashscreen";
+import AboutUs from "./components/AboutUs";
 
 const App = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -59,6 +61,7 @@ const App = () => {
   return (
     <div>
       <Header />
+      <Splashscreen />
       <div className="container">
         <div className="content">
           <h2 className="text" style={{ opacity: opacityFirstText }}>
@@ -69,13 +72,8 @@ const App = () => {
           </h2>
         </div>
       </div>
-      {showAboutSection && (
-        <div className="about-section">
-          <h2>About Us</h2>
-          <p>This is the content for the About Us section.</p>
-        </div>
-      )}
-      <div className="background-content">
+      {showAboutSection && <AboutUs />}
+      <div className="background-content" style={{ height: "100vh" }}>
         {/* Your content behind the scrolling text goes here */}
         <p>This is some content behind the scrolling text.</p>
       </div>

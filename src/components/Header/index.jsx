@@ -4,9 +4,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import "./Header.scss";
 import logo from "../../assets/logo.svg";
 import logo2 from "../../assets/logo2.svg";
+import volumeup from "../../assets/icons/Volume-up.svg";
+import volumeoff from "../../assets/icons/Volume-off.svg";
+import { useGeneralStore } from "../../store/generalStore";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const isAmbientPlaying = useGeneralStore((store) => store.isAmbientPlaying);
+  const setIsAmbientPlaying = useGeneralStore((store) => store.setIsAmbientPlaying);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,6 +49,9 @@ const Header = () => {
         </div>
         <nav></nav>
       </header>
+      <motion.div className="music" onClick={() => setIsAmbientPlaying(!isAmbientPlaying)}>
+        {isAmbientPlaying ? <img src={volumeup} alt="" /> : <img src={volumeoff} alt="" />}
+      </motion.div>
     </AnimatePresence>
   );
 };

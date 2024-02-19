@@ -1,0 +1,30 @@
+.about-section {
+  position: relative;
+
+  .about-us-content {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .aboutus-right-side {
+    position: absolute;
+    top: 0;
+    right: 0;
+    // transform: translateY(-50%);
+    height: calc(100% - 25vh);
+    width: 50%;
+  }
+
+  .aboutus-sticky {
+    position: sticky;
+    top: 50%;
+    width: 300px;
+    height: 300px;
+    background-color: orange;
+    border-radius: 30px;
+  }
+}
