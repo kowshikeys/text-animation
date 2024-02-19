@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css"; // Import your CSS file
+import Header from "./components/Header";
 
 const App = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -43,16 +44,10 @@ const App = () => {
   }, [showScrollUpText]);
 
   // Calculate opacity of the first and second text based on scroll position
-  const opacityFirstText = Math.max(
-    0,
-    Math.min(1, 1 - scrollPosition / (window.innerHeight / 2))
-  );
+  const opacityFirstText = Math.max(0, Math.min(1, 1 - scrollPosition / (window.innerHeight / 2)));
   const opacitySecondText = Math.max(
     0,
-    Math.min(
-      1,
-      (scrollPosition - window.innerHeight / 1.5) / (window.innerHeight / 10)
-    )
+    Math.min(1, (scrollPosition - window.innerHeight / 1.5) / (window.innerHeight / 10))
   );
 
   // CSS transition styles for the "Scroll up" text
@@ -63,18 +58,14 @@ const App = () => {
 
   return (
     <div>
+      <Header />
       <div className="container">
         <div className="content">
           <h2 className="text" style={{ opacity: opacityFirstText }}>
-            <p>
-              Crafting digital products with soul, enchanting users with love.
-            </p>
+            <p>Crafting digital products with soul, enchanting users with love.</p>
           </h2>
           <h2 className="text" style={scrollUpTextStyles}>
-            <p>
-              we shape success with web, app and 3D, crafting your perfect
-              journey digital
-            </p>
+            <p>we shape success with web, app and 3D, crafting your perfect journey digital</p>
           </h2>
         </div>
       </div>
